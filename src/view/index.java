@@ -42,8 +42,6 @@ public class index extends JFrame {
 					UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
 					index frame = new index();
 					frame.setVisible(true);
-					
-						
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -68,7 +66,7 @@ public class index extends JFrame {
 		panel.setLayout(null);
 
 		txtRuta = new JTextField();
-		txtRuta.setBounds(10, 93, 483, 20);
+		txtRuta.setBounds(10, 93, 483, 28);
 		panel.add(txtRuta);
 		txtRuta.setColumns(10);
 
@@ -80,7 +78,7 @@ public class index extends JFrame {
 
 			}
 		});
-		btnCargar.setBounds(503, 92, 89, 23);
+		btnCargar.setBounds(505, 93, 89, 28);
 		panel.add(btnCargar);
 
 		progressBar = new JProgressBar();
@@ -101,14 +99,14 @@ public class index extends JFrame {
 			}
 		});
 		btnImportar.setMnemonic('i');
-		btnImportar.setBounds(278, 146, 89, 23);
+		btnImportar.setBounds(278, 146, 89, 28);
 		panel.add(btnImportar);
 	}
 
 	public void cargarBaseDatos() {
 		JFileChooser fileChooser = new JFileChooser();
 		fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-		 fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Excel", "xlsx","xlsm","xltx","xltx"));
+		fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Excel", "xlsx", "xlsm", "xltx", "xltx"));
 		int result = fileChooser.showOpenDialog(this);
 		if (result == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = fileChooser.getSelectedFile();
